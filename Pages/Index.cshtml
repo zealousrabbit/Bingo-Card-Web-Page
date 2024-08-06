@@ -1,0 +1,25 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Bingo Card Generator";
+}
+
+<!-- This asks and allows users to input phrase parameters --> 
+
+<h2>Bingo Card Generator</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label for="Title">Card Title:</label>
+        <input type="text" class="form-control" id="Title" name="Title" required />
+    </div>
+    <div class="form-group">
+        <label for="Size">Card Size (e.g., 5):</label>
+        <input type="number" class="form-control" id="Size" name="Size" min="1" required />
+    </div>
+    <div class="form-group">
+        <label for="NumberOfCards">Number of Cards:</label>
+        <input type="number" class="form-control" id="NumberOfCards" name="NumberOfCards" min="1" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Generate Cards</button>
+</form>

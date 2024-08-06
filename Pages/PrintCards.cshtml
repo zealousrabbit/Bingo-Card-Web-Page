@@ -1,0 +1,47 @@
+﻿@page
+@model Bingo_Card_for_CodeYou.Pages.PrintCardsModel
+@{
+    ViewData["Title"] = "Bingo Cards";
+}
+
+<!--display page (needs a rework, more streamlined look)-->
+
+<h2>@Model.Title</h2>
+
+<div id="cards-container">
+    @foreach (var card in Model.Cards)
+    {
+        <div class="card">
+            @for (int i = 0; i < Model.Size; i++)
+            {
+                <div class="row">
+                    @for (int j = 0; j < Model.Size; j++)
+                    {
+                        <div class="cell">@card[i * Model.Size + j]</div>
+                    }
+                </div>
+            }
+        </div>
+    }
+</div>
+
+<style>
+    .card {
+        border: 1px solid black;
+        margin-bottom: 20px;
+        padding: 10px;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .row {
+        display: flex;
+    }
+
+    .cell {
+        border: 1px solid gray;
+        padding: 10px;
+        text-align: center;
+        flex: 1;
+    }
+</style>

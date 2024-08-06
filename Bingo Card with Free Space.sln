@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bingo Card with Free Space", "Bingo Card with Free Space.csproj", "{2C5C4B6E-6A74-4C60-9106-E9316A2BB0B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C5C4B6E-6A74-4C60-9106-E9316A2BB0B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C5C4B6E-6A74-4C60-9106-E9316A2BB0B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C5C4B6E-6A74-4C60-9106-E9316A2BB0B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C5C4B6E-6A74-4C60-9106-E9316A2BB0B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EBF32E55-A9ED-42E3-BBFA-45DE4634E22C}
+	EndGlobalSection
+EndGlobal

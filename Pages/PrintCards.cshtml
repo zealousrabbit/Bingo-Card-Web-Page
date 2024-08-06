@@ -1,10 +1,8 @@
 ﻿@page
-@model Bingo_Card_for_CodeYou.Pages.PrintCardsModel
+@model Bingo_Card_with_Free_Space.Pages.PrintCardsModel
 @{
     ViewData["Title"] = "Bingo Cards";
 }
-
-<!--display page (needs a rework, more streamlined look)-->
 
 <h2>@Model.Title</h2>
 
@@ -17,7 +15,16 @@
                 <div class="row">
                     @for (int j = 0; j < Model.Size; j++)
                     {
-                        <div class="cell">@card[i * Model.Size + j]</div>
+                        <div class="cell">
+                            @if (Model.FreeSpace && i == Model.Size / 2 && j == Model.Size / 2)
+                            {
+                                <strong>@Model.FreeSpaceContent</strong>
+                            }
+                            else
+                            {
+                                @card[i * Model.Size + j]
+                            }
+                        </div>
                     }
                 </div>
             }
@@ -26,12 +33,19 @@
 </div>
 
 <style>
+    #cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
     .card {
         border: 1px solid black;
-        margin-bottom: 20px;
+        margin: 10px;
         padding: 10px;
-        display: inline-block;
-        vertical-align: top;
+        box-sizing: border-box;
+        width: 200px; <!-- Fixed width -->
+        height: 200px; <!-- Fixed height -->
     }
 
     .row {
@@ -43,5 +57,24 @@
         padding: 10px;
         text-align: center;
         flex: 1;
+        box-sizing: border-box;
+        font-size: calc(100% / @Model.Size); <!-- Adjust font size based on card size -->
+        height: calc(200px / @Model.Size); <!-- Adjust cell height based on card size -->
+    }
+
+    @@media print {
+        .card {
+            width: 3in; <!-- Fixed width for printing -->
+            height: 3in; <!-- Fixed height for printing -->
+        }
+
+        .cell {
+            height: 1in; <!-- Fixed cell height for printing -->
+            font-size: 0.5em; <!-- Smaller font size for printing -->
+        }
+
+        #cards-container {
+            display: block;
+        }
     }
 </style>

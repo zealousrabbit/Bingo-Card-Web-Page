@@ -1,10 +1,8 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Bingo Card Generator";
+    ViewData["Title"] = "Home page";
 }
-
-<!-- This asks and allows users to input phrase parameters --> 
 
 <h2>Bingo Card Generator</h2>
 
@@ -20,6 +18,14 @@
     <div class="form-group">
         <label for="NumberOfCards">Number of Cards:</label>
         <input type="number" class="form-control" id="NumberOfCards" name="NumberOfCards" min="1" required />
+    </div>
+    <div class="form-group">
+        <label for="Phrases">Enter Phrases (separated by commas):</label>
+        <textarea class="form-control" id="Phrases" name="Phrases" rows="4" required></textarea>
+    </div>
+    <div class="form-group">
+        <label for="FreeSpaceContent">Free Space Content (leave empty for default "FREE"): </label>
+        <input type="text" class="form-control" id="FreeSpaceContent" name="FreeSpaceContent" />
     </div>
     <button type="submit" class="btn btn-primary">Generate Cards</button>
 </form>
